@@ -1,38 +1,367 @@
-.App {
-  text-align: center;
+.hidden {
+  display: none; }
+
+.block {
+  display: block; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.grid {
+  display: grid; }
+
+.win {
+  background-color: var(--win-color); }
+
+.pointer {
+  cursor: pointer; }
+
+.x {
+  color: var(--sky-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.o {
+  color: var(--gold-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.active-btn {
+  background-color: var(--gray-color);
+  color: var(--bg-color);
+  color: red; }
+
+.container {
+  margin: 0 auto; }
+
+@media (max-width: 573px) {
+  .container {
+    width: 90%; } }
+@media (min-width: 1200px) {
+  .container {
+    width: 30%; } }
+:root {
+  --bg-color:rgba(3,26,39,0.78);
+  --secondry-color:black;
+  --win-color:rgba(61,174,56,0.8);
+  --sky-color:rgba(30, 222, 224, 1);
+  --gold-color:rgba(237, 212, 21, 1);
+  --gray-color:rgba(179, 199, 199, 1);
+  --font-weight:800; }
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  scroll-behavior: smooth; }
+
+button {
+  border: none; }
+  a{
+ text-decoration: none;
+ display: block;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+html {
+  font-size: 16px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+body {
+  font-family: 'Cairo', sans-serif; }
 
-.App-header {
-  background-color: #282c34;
+main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  background-color: var(--bg-color); }
+
+.back-btn {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  padding: 10px 20px;
+  background-color: black;
   color: white;
-}
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer; }
 
-.App-link {
-  color: #61dafb;
-}
+.start-page {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .start-page span {
+    font-size: 3rem;
+    font-weight: var(--font-weight); }
+  .start-page h1 span:nth-child(1) {
+    color: var(--sky-color); }
+  .start-page h1 span:nth-child(2) {
+    color: var(--gold-color); }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.start-page .chose-player {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: var(--font-weight);
+  text-transform: uppercase; }
+
+.start-page .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+  padding: 40px 0;
+  margin-bottom: 130px; }
+
+.start-page .chose-player .btns {
+  margin-top: 15px;
+  background-color: rgba(27, 28, 38, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 7px; }
+
+.chose-player .btns button {
+  width: 50%;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: var(--font-weight);
+  background-color: rgba(27, 28, 38, 0.8);
+  color: white;
+  font-size: 2rem; }
+
+.play-with {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .play-with :nth-child(1) {
+    background-color: var(--gold-color); }
+  .play-with :nth-child(2) {
+    background-color: var(--sky-color); }
+
+.play-with a {
+  margin-top: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  text-transform: uppercase;
+  font-weight: var(--font-weight);
+  padding: 7px 0;
+  border-radius: 10px;
+  font-size: 1.3rem;
+   user-select: none;
+   color: white;}
+
+.game-page {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.game-page .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px; }
+
+.game-page .container > div {
+  cursor: pointer; }
+
+.game-page .container .xo span:nth-child(1) {
+  color: var(--sky-color);
+  font-weight: var(--font-weight);
+  font-size: 2rem; }
+
+.game-page .container .xo span:nth-child(2) {
+  color: var(--gold-color);
+  font-weight: var(--font-weight);
+  font-size: 2rem; }
+
+.turn button {
+  padding: 5px 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px; }
+
+.current-player {
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+.retry button {
+  padding: 7px;
+  color: var(--main-color);
+  background-color: var(--gray-color);
+  font-size: 1rem;
+  border-radius: 5px; }
+
+.squ {
+  width: 100px;
+  height: 100px;
+  background-color: var(--secondry-color);
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 3px 3px var(--main-color);
+          box-shadow: 3px 3px 3px 3px var(--main-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer; }
+
+.result {
+  padding: 0;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  flex-direction: column;
+  width: 100px; }
+
+.result > * {
+  font-weight: bold; }
+
+.your-score {
+  background-color: var(--sky-color); }
+
+.ties {
+  background-color: var(--gray-color); }
+
+.other-score {
+  background-color: var(--gold-color); }
+
+.chose-player .btns .active-btn {
+  background-color: var(--gray-color);
+  color: var(--bg-color); }
+
+.hidden {
+  display: none; }
+
+.block {
+  display: block; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.grid {
+  display: grid; }
+
+.win {
+  background-color: var(--win-color); }
+
+.pointer {
+  cursor: pointer; }
+
+.x {
+  color: var(--sky-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.o {
+  color: var(--gold-color);
+  font-weight: 800;
+  font-size: 3rem; }
+
+.active-btn {
+  background-color: var(--gray-color);
+  color: var(--bg-color);
+  color: red; }
+
+.container {
+  margin: 0 auto; }
+
+@media (max-width: 573px) {
+  .container {
+    width: 90%; } }
+@media (min-width: 1200px) {
+  .container {
+    width: 30%; } }
+
+/*# sourceMappingURL=main.css.map */
