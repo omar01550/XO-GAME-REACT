@@ -1,8 +1,6 @@
 import {Link} from "react-router-dom";
 import {useState} from 'react';
 
-
-
 export default function GamePage() {
 
     let [turn,setTurn]=useState("x");
@@ -12,6 +10,8 @@ export default function GamePage() {
 
     function startGame(e) {
     squClick(e);
+    handelTies();
+
 let allSqu=document.querySelectorAll(".squ");
 
  checkWinner(0,3,6,allSqu);
@@ -55,7 +55,9 @@ let allSqu=document.querySelectorAll(".squ");
     }
 
     function checkWinner(x,y,z,allSqu) {
-         if(allSqu[x].innerHTML === allSqu[y].innerHTML && allSqu[y].innerHTML=== allSqu[z].innerHTML && allSqu[y].innerHTML!=""){
+
+         if(allSqu[x].innerHTML === allSqu[y].innerHTML && allSqu[y].innerHTML=== allSqu[z].innerHTML && allSqu[y].innerHTML!==""){
+
              allSqu.forEach((squ, i) => {
                squ.style.pointerEvents="none";
              });
@@ -75,6 +77,20 @@ let allSqu=document.querySelectorAll(".squ");
          }
     }
 
+    function handelTies() {
+       let allSqu=document.querySelectorAll(".squ");
+       let state=true;
+       for(let i=0;i<allSqu.length;i++){
+          if(allSqu[i].innerHTML == ""){
+             state=false;
+          }
+
+       }
+
+       if(state){
+          setTies(()=>ties+1);
+       }
+    }
 
 
    return (
@@ -118,7 +134,7 @@ let allSqu=document.querySelectorAll(".squ");
                    <div className="ties result">
 
                           <span>ties</span>
-                          <span>0</span>
+                          <span>{ties}</span>
 
                    </div>
                    <div className="other-score result">
